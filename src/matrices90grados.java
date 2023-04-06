@@ -4,12 +4,12 @@ public class matrices90grados {
     public static void main(String[] args) {
         /*
         *
-Generar una matriz NxM de forma dinámica donde los valores N y M
- son introducidos por el usuario.
-Llenar esta matriz con valores aleatorios de entre 0 y 100.
-Imprimir los valores de la matriz.
-Generar una nueva matriz de MxN y generar la matriz transpuesta de la matriz de NxM (Girar 90 grados a la derecha)
-Imprimir los valores de la matriz transpuesta.
+        Generar una matriz NxM de forma dinámica donde los valores N y M
+        son introducidos por el usuario.
+        Llenar esta matriz con valores aleatorios de entre 0 y 100.
+        Imprimir los valores de la matriz.
+        Generar una nueva matriz de MxN y generar la matriz transpuesta de la matriz de NxM (Girar 90 grados a la derecha)
+        Imprimir los valores de la matriz transpuesta.
 
         * */
        Scanner scanner = new Scanner (System.in);
@@ -19,7 +19,7 @@ Imprimir los valores de la matriz transpuesta.
 
 
         Random rand = new Random();
-        System.out.println("Ingrese que son  las filas ");
+        System.out.println("Ingrese las filas ");
         n = scanner.nextInt();
         System.out.println("Ingrese las columnas ");
         m = scanner.nextInt();
@@ -34,34 +34,36 @@ Imprimir los valores de la matriz transpuesta.
         }
 
         // Imprimir la matriz
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                System.out.print(matriz[i][j] + " ");
+        for (int i = 0; i < matriz.length ; i++) {
+            for (int j = 0; j < matriz[0].length ; j++) {
+                System.out.print(matriz[i][j] + "| ");
             }
             System.out.println();
+
         }
 
-        int auxA= 1;
-        int auxb = 0;
+        int auxA= n-1;
         int [][] aux = new int[m][n];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-            aux[auxb][m-auxA] = matriz[n][m];
-                auxA--;
-                auxb++;
 
+        for (int i = 0; i <  matriz[0].length; i++) {
+            for (int j = 0 ; j < matriz.length ; j++) {
+                aux[i][auxA] = matriz[j][i];
+                auxA--;
             }
-            auxA= 1;
-            auxb = 1;
+            auxA=n-1;
+
         }
 
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print(matriz[i][j] + " ");
+        /*Arreglo donde se muestra el arreglo invertido noventa grados */
+        System.out.println("Este es el oficional mami que tu quiere que ");
+        for (int i = 0; i< aux.length ;i++){
+
+            for (int j = 0; j< aux[0].length  ; j++){
+                System.out.print(aux[i][j]+" |");
+
             }
             System.out.println();
         }
-
 
     }
 }
