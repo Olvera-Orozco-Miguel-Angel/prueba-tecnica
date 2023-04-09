@@ -26,7 +26,7 @@ public class matrices90grados {
         int[][] matriz = new int[n][m];
 
 
-        // Llenar la matriz con números aleatorios entre 0 y 99
+        // Llenar la matriz con números aleatorios entre 0 y 100
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 matriz[i][j] = rand.nextInt(101);
