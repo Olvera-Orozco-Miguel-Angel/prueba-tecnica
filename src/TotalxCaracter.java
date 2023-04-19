@@ -20,7 +20,6 @@ public class TotalxCaracter {
                 int frecuencia = mapa.get(aux[i]);
                 mapa.put(aux[i], frecuencia+1);
             }
-
         }
         System.out.println(mapa);
 
